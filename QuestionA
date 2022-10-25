@@ -56,6 +56,8 @@ class NewtonInterpolation:public Interpolation
       cout << endl;
     }
   }
+  
+  //计算出牛顿多项式在某个点的值
   void getInterpolation()
   {
     double p=0;
