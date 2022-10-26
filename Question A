@@ -73,6 +73,21 @@ class NewtonInterpolation:public Interpolation
     }
     cout <<"The value at "<<t<< " is " <<p;
     }
+    
+    //输出多项式
+  void getInterpolationPolynomial()
+{
+  cout << "The Polynomial is ";
+  for (int i=0;i<n;i++)
+  {
+    if (f[i][i]>0 && i>0)
+    cout<< "+"<<f[i][i];
+    else{cout << f[i][i];}
+    for (int j=0;j<i;j++)
+    {cout << "(x"<<-x[j]<<")";}
+  }
+  cout << endl;
+}
 
 };
 
