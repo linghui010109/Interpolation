@@ -89,9 +89,22 @@ void getInterpolation()
     {
       p+=f[i][i]*k[i];
     }
-    cout <<"The value at "<<t<< " is " <<p;
+    cout <<"The value at "<<t<< " is " <<p<<endl;
     }
 
+void getInterpolationPolynomial()
+{
+  cout << "The Polinomial is ";
+  for (int i=0;i<n;i++)
+  {
+    if (f[i][i]>0 && i>0)
+    cout<< "+"<<f[i][i];
+    else{cout << f[i][i];}
+    for (int j=0;j<i;j++)
+    {cout << "(x"<<-x[j]<<")";}
+  }
+  cout << endl;
+}
 };
   
 int main(void) {
@@ -100,6 +113,6 @@ int main(void) {
   her1.getdata();
   her1.getHermiteTable();
   her1.getInterpolation();
-
+  her1.getInterpolationPolynomial();
   return 0;
 }
