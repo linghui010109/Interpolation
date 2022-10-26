@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iostream>
 #include <string>
 #include <cmath>
 #define pi acos(-1)
@@ -20,6 +21,12 @@ void setData()
     x[i]=cos(((2*(i+1)-1)*pi)/(2*n));
     f[0][i]=fun1(x[i]);
     }
+ for (int i=0;i<n;i++)
+    {
+    if (abs(x[i])<0.000001)
+    {x[i]=0;}
+    }
+  
     
   for (int i=1;i<n;i++)
     {
@@ -60,7 +67,26 @@ class NewtonInterpolation:public Interpolation
       cout << endl;
     }
   }
-
+//输出多项式
+ void getInterpolationPolynomial()
+{
+  cout << "The Polynomial is ";
+  for (int i=0;i<n;i++)
+  {
+    if (f[i][i]>0 && i>0)
+    cout<< "+"<<f[i][i];
+    else{cout << f[i][i];}
+    for (int j=0;j<i;j++){
+    if (x[j]>0)
+    {cout << "(x-"<<x[j]<<")";}
+    else if(x[j]==0)
+    {cout <<"x";}
+    else
+    {cout <<"(x+"<<-x[j]<<")";}
+  }
+  }
+  cout << endl;
+}
 
 };
   
@@ -69,6 +95,7 @@ int main(void) {
   NewtonInterpolation new1;
   new1.setData();
   new1.getNewtonTable();
+  new1.getInterpolationPolynomial();
 
   return 0;
 }
