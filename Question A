@@ -78,8 +78,8 @@ class NewtonInterpolation:public Interpolation
    //输出多项式
  void getInterpolationPolynomial()
 {
-  cout << "The Polinomial is ";
-  for (int i=0;i<=n;i++)
+  cout << "The Polynomial is ";
+  for (int i=0;i<n;i++)
   {
     if (f[i][i]>0 && i>0)
     cout<< "+"<<f[i][i];
