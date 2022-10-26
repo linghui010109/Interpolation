@@ -65,7 +65,20 @@ class NewtonInterpolation:public Interpolation
       cout << endl;
     }
   }
-
+//输出多项式
+  void getInterpolationPolynomial()
+{
+  cout << "The Polynomial is ";
+  for (int i=0;i<n;i++)
+  {
+    if (f[i][i]>0 && i>0)
+    cout<< "+"<<f[i][i];
+    else{cout << f[i][i];}
+    for (int j=0;j<i;j++)
+    {cout << "(x"<<-x[j]<<")";}
+  }
+  cout << endl;
+  }
 
 };
   
@@ -74,6 +87,7 @@ int main(void) {
   NewtonInterpolation new1;
   new1.setData();
   new1.getNewtonTable();
+  new1.getInterpolationPolynomial()；
 
   return 0;
 }
